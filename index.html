@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>I LOVE YOU IVY</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background: #ffe6eb;
+            margin-top: 80px;
+        }
+
+        h1 {
+            color: #ff4d6d;
+        }
+
+        p {
+            color: #333;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        .yes {
+            background-color: #ff4d6d;
+            color: white;
+        }
+
+        .no {
+            background-color: white;
+            color: #ff4d6d;
+            position: absolute;
+        }
+
+        select {
+            padding: 8px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        #step1, #step2 {
+            margin-top: 30px;
+        }
+
+        .place {
+            font-weight: bold;
+            color: #ff4d6d;
+        }
+
+        .dresscode {
+            font-size: 14px;
+            color: #555;
+            margin-top: 10px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Hi baby💕</h1>
+    <p>Will you be my Valentine?</p>
+
+    <button class="btn yes" onclick="showStep1()">YES</button>
+    <button class="btn no" onmouseover="moveButton()" id="noBtn">NO</button>
+
+    <div id="step1" style="display:none;">
+        <h2>Yehey!🥰</h2>
+        
+
+        <p>I’m planning a simple dinner at</p>
+        <p class="place">Ginza Gyu – Tomas Morato 💖</p>
+
+        <div class="dresscode">
+            <p><strong>Dress code:</strong></p>
+            <ul style="list-style:none; padding:0;">
+                <li>• Wear Smart casual outfits — nice shirt/blouse, casual pants or skirt.</li>
+                <li>• Clean jeans and casual tops</li>
+                <li>• Comfortable shoes — Puma, onitsuka, flats</li>
+            </ul>
+        </div>
+
+        <button class="btn yes" onclick="showStep2()">Next ➡️</button>
+    </div>
+
+    <div id="step2" style="display:none;">
+        <form action="https://formspree.io/f/xwvnlnnz" method="POST">
+            <p>Choose our date:</p>
+            <select name="Date" required>
+                <option value="">-- Select Date --</option>
+                <option value="February 20">February 20</option>
+                <option value="February 21">February 21</option>
+                <option value="February 22">February 22</option>
+            </select>
+
+            <br>
+
+            <p>Choose time:</p>
+            <select name="Time" required>
+                <option value="">-- Select Time --</option>
+                <option value="6:30 PM">6:30 PM</option>
+                <option value="7:00 PM">7:00 PM</option>
+                <option value="7:30 PM">7:30 PM</option>
+            </select>
+         <p>Sorry baby nextweek pa ko magkakabudget</p>
+        <p>Pero bukas ill make sure na makakasunod ako syempre i still want to spend time with you on valentines 💕</p>
+            <br><br>
+
+            <input type="hidden" name="Restaurant" value="Ginza Gyu - Tomas Morato">
+
+            <button type="submit" class="btn yes">Confirm 💌</button>
+        </form>
+    </div>
+
+    <script>
+        function showStep1() {
+            document.getElementById("step1").style.display = "block";
+        }
+
+        function showStep2() {
+            document.getElementById("step1").style.display = "none";
+            document.getElementById("step2").style.display = "block";
+        }
+
+        function moveButton() {
+            var button = document.getElementById("noBtn");
+            var x = Math.random() * (window.innerWidth - 100);
+            var y = Math.random() * (window.innerHeight - 50);
+            button.style.left = x + "px";
+            button.style.top = y + "px";
+        }
+    </script>
+
+</body>
+</html>
